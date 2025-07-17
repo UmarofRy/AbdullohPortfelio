@@ -17,7 +17,7 @@ function Portfelio() {
       description:
         "A clean and modern plumbing services site with contact form and responsive layout. Built with React and modern CSS techniques.",
       image:
-        "../public/tech.jpg",
+        "https://ryumarov.netlify.app/tech.jpg",
       link: "http://water-techuz.netlify.app",
       tags: ["React", "CSS", "Responsive"],
       category: "Web",
@@ -44,7 +44,7 @@ function Portfelio() {
       description:
         "Creative portfolio showcasing modern design principles with smooth animations and interactions. Premium user experience.",
       image:
-        "../public/creative.jpg",
+        "https://ryumarov.netlify.app/creative.jpg",
       link: "https://umarof.netlify.app/",
       tags: ["HTML", "CSS", "JavaScript", "Animation"],
       category: "UI/UX",
@@ -83,7 +83,7 @@ function Portfelio() {
       description:
         "Modern banking interface design with focus on security and user experience. Clean and professional aesthetics.",
       image:
-        "../public/design.jpg",
+        "https://ryumarov.netlify.app/design.jpg",
       link: "#",
       tags: ["Figma", "UI Design", "Prototyping"],
       category: "UI/UX",
