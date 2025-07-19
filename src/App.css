@@ -3,6 +3,19 @@
 /* Font Imports - Playfair Display + Fira Code */
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Fira+Code:wght@300;400;500;600;700&display=swap");
 
+/* Language Switcher in Right Sidebar */
+.language-switcher-item {
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-divider + .language-switcher-item {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: none;
+}
+
 /* CSS Custom Properties */
 :root {
   /* Colors */

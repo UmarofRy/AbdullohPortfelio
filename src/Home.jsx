@@ -1,8 +1,11 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import "./Home.css";
+import { useLanguage } from "./LanguageContext.jsx";
+import LanguageSwitcher from "./LanguageSwitcher.jsx";
 
 function Home() {
+  const { t } = useLanguage();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isRightSidebarOpen, setIsRightSidebarOpen] = useState(false);
   const [expandedMenus, setExpandedMenus] = useState({});
@@ -76,9 +79,9 @@ function Home() {
             </div>
           </div>
           <div className="profile-info">
-            <h1 className="profile-name">Abdulloh Umarov</h1>
-            <p className="profile-role">Front-end Developer</p>
-            <p className="profile-subtitle">UI/UX Designer</p>
+            <h1 className="profile-name">{t("name")}</h1>
+            <p className="profile-role">{t("role")}</p>
+            <p className="profile-subtitle">{t("subtitle")}</p>
           </div>
         </div>
 
@@ -122,25 +125,25 @@ function Home() {
 
         <div className="sidebar-content">
           <div className="info-section">
-            <h3 className="section-title">Personal Info</h3>
+            <h3 className="section-title">{t("personalInfo")}</h3>
             <div className="info-grid">
               <div className="info-item">
-                <span className="info-label">Residence</span>
-                <span className="info-value">Uzbekistan</span>
+                <span className="info-label">{t("residence")}</span>
+                <span className="info-value">{t("uzbekistan")}</span>
               </div>
               <div className="info-item">
-                <span className="info-label">City</span>
-                <span className="info-value">Toshkent</span>
+                <span className="info-label">{t("city")}</span>
+                <span className="info-value">{t("tashkent")}</span>
               </div>
               <div className="info-item">
-                <span className="info-label">Age</span>
-                <span className="info-value">16</span>
+                <span className="info-label">{t("age")}</span>
+                <span className="info-value">19</span>
               </div>
             </div>
           </div>
 
           <div className="languages-section">
-            <h3 className="section-title">Languages</h3>
+            <h3 className="section-title">{t("languages")}</h3>
             <div className="language-grid">
               <div className="language-item">
                 <div className="language-circle" data-percentage="100">
@@ -166,7 +169,7 @@ function Home() {
                   </svg>
                   <div className="percentage">100%</div>
                 </div>
-                <span>Uzbek</span>
+                <span>{t("uzbek")}</span>
               </div>
               <div className="language-item">
                 <div className="language-circle" data-percentage="90">
@@ -192,13 +195,13 @@ function Home() {
                   </svg>
                   <div className="percentage">90%</div>
                 </div>
-                <span>English</span>
+                <span>{t("english")}</span>
               </div>
             </div>
           </div>
 
           <div className="skills-section">
-            <h3 className="section-title">Programming Skills</h3>
+            <h3 className="section-title">{t("programmingSkills")}</h3>
             <div className="skills-list">
               <div className="skill-item">
                 <div className="skill-header">
@@ -266,7 +269,7 @@ function Home() {
           <div className="download-section">
             <a href="#" className="download-btn" download>
               <i className="fas fa-download"></i>
-              Download CV
+              {t("downloadCV")}
             </a>
           </div>
         </div>
@@ -285,27 +288,23 @@ function Home() {
           <div className="hero-content">
             <div className="hero-text">
               <h1 className="hero-title">
-                Hello, I'm <span className="highlight">Abdulloh</span>
+                {t("hello")} <span className="highlight">Abdulloh</span>
               </h1>
               <div className="hero-subtitle">
-                <span>I create </span>
+                <span>{t("iCreate")} </span>
                 <span className="typed-wrapper">
                   <span ref={typedElement}></span>
                 </span>
               </div>
-              <p className="hero-description">
-                A passionate 16-year-old front-end developer from Uzbekistan,
-                specializing in creating beautiful, responsive web applications
-                with modern technologies like React, JavaScript, and CSS.
-              </p>
+              <p className="hero-description">{t("heroDescription")}</p>
               <div className="hero-buttons">
                 <a href="#contact" className="btn btn-primary">
                   <i className="fas fa-envelope"></i>
-                  Get In Touch
+                  {t("getInTouch")}
                 </a>
                 <a href="#portfolio" className="btn btn-secondary">
                   <i className="fas fa-eye"></i>
-                  View Portfolio
+                  {t("viewPortfolio")}
                 </a>
               </div>
             </div>
@@ -340,10 +339,8 @@ function Home() {
 
         <div className="services-section">
           <div className="section-header">
-            <h2 className="section-title">What I Do</h2>
-            <p className="section-subtitle">
-              Passionate about creating digital experiences that matter
-            </p>
+            <h2 className="section-title">{t("whatIDo")}</h2>
+            <p className="section-subtitle">{t("passionateAbout")}</p>
           </div>
           <div className="services-grid">
             <div className="service-card">
@@ -512,7 +509,7 @@ function Home() {
             <li className="nav-item">
               <Link to="/" className="nav-link" onClick={closeRightSidebar}>
                 <i className="fas fa-home"></i>
-                Bosh sahifa
+                {t("home")}
               </Link>
             </li>
 
@@ -523,25 +520,25 @@ function Home() {
                 onClick={closeRightSidebar}
               >
                 <i className="fas fa-briefcase"></i>
-                Portfelio
+                {t("portfolio")}
               </Link>
             </li>
 
             <li className="nav-item">
               <Link
-                to="/about"
+                to="/history"
                 className="nav-link"
                 onClick={closeRightSidebar}
               >
-                <i className="fas fa-user"></i>
-                About
+                <i className="fas fa-history"></i>
+                {t("history")}
               </Link>
             </li>
 
             <li className="nav-item">
               <Link to="/blog" className="nav-link" onClick={closeRightSidebar}>
                 <i className="fas fa-blog"></i>
-                Blog
+                {t("blog")}
               </Link>
             </li>
 
@@ -552,17 +549,14 @@ function Home() {
                 onClick={closeRightSidebar}
               >
                 <i className="fas fa-envelope"></i>
-                Contact
+                {t("contact")}
               </Link>
             </li>
 
             <li className="nav-divider"></li>
 
-            <li className="nav-item">
-              <div className="nav-option">
-                <i className="fas fa-sun"></i>
-                Light Version
-              </div>
+            <li className="nav-item language-switcher-item">
+              <LanguageSwitcher />
             </li>
           </ul>
         </nav>

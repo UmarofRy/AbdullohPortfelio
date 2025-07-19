@@ -6,6 +6,7 @@ import Contact from "./Contact.jsx";
 import Blog from "./Blog.jsx";
 import History from "./History.jsx";
 import Portfelio from "./Portfelio.jsx";
+import { LanguageProvider } from "./LanguageContext.jsx";
 
 function App() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -91,22 +92,24 @@ function App() {
   }
 
   return (
-    <div className="app">
-      {/* Custom Cursor */}
-      <div ref={cursorRef} className="custom-cursor"></div>
-      <div ref={cursorDotRef} className="cursor-dot"></div>
+    <LanguageProvider>
+      <div className="app">
+        {/* Custom Cursor */}
+        <div ref={cursorRef} className="custom-cursor"></div>
+        <div ref={cursorDotRef} className="cursor-dot"></div>
 
-      {/* Noise Background */}
-      <div className="noise-background"></div>
+        {/* Noise Background */}
+        <div className="noise-background"></div>
 
-      <Routes>
-        <Route path="/" element={<Home mousePosition={mousePosition} />} />
-        <Route path="/portfolio" element={<Portfelio />} />
-        <Route path="/history" element={<History />} />
-        <Route path="/blog" element={<Blog />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
-    </div>
+        <Routes>
+          <Route path="/" element={<Home mousePosition={mousePosition} />} />
+          <Route path="/portfolio" element={<Portfelio />} />
+          <Route path="/history" element={<History />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </div>
+    </LanguageProvider>
   );
 }
 
